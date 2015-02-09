@@ -52,3 +52,12 @@ class LinkedList():
                 found = True
                 print takeout.data
                 return data
+
+    def print_list(self):
+        """Print list tuple literal"""
+        tuple_literal_list = ()
+        all_node = self.head
+        while all_node is not None:
+            tuple_literal_list = tuple_literal_list + (all_node.data,)
+            all_node = all_node.next
+        print tuple_literal_list
