@@ -1,62 +1,68 @@
-from linked_list import LinkedList
-import sys
-import unittest
+import linked_list as LL
 import pytest
+# import unittest
 
 
-LinkedList = ("1, 2, 3")
+def test_init_Node():
+    data = "test"
+    head = LL.Node(data)
+    assert type(head) == LL.Node
+    assert head.data == data
 
 
-def test_init():
-    test_list = LinkedList
-    new_node = test_list.data
-    expected = (new_node)
-    actual = (new_node)
-    assert (expected, actual)
+def test_init_LinkedList():
+    linked_list = LL.LinkedList()
+    assert type(linked_list) == LL.LinkedList
 
 
-def test_insert_node():
-    test_list = LinkedList
-    test_list.insert_node(100)
-    expected = (100, None)
-    actual = (test_list.head.data, test_list.head)
+def test_insert():
+    linked_list = LL.LinkedList()
+    data = "test"
+    linked_list.insert(data)
+    assert linked_list.head.data == data
+
+
+def test_pop():
+    linked_list = LL.LinkedList()
+    linked_list.insert(1)
+    linked_list.insert(2)
+    linked_list.insert(3)
+    assert linked_list.pop() == 3
+
+
+def test_size():
+    linked_list = LL.LinkedList()
+    assert linked_list.size() == 0
+    linked_list.insert(1)
+    linked_list.insert(2)
+    linked_list.insert(3)
+    assert linked_list.size() == 3
+
+
+def test_search():
+    linked_list = LL.LinkedList()
+    linked_list.insert(1)
+    linked_list.insert(2)
+    linked_list.insert(3)
+    find = linked_list.search(2)
+    expected = (2)
+    actual = (find)
     assert expected, actual
 
 
-def test_pop_first_node():
-    test_list = LinkedList
-    pop_test = (test_list.pop_first_node)
-    expected = (2, 3)
-    actual = (pop_test, test_list.head)
-    assert expected, actual
+def test_remove():
+    linked_list = LL.LinkedList()
+    linked_list.insert(1)
+    linked_list.insert(2)
+    linked_list.insert(3)
+    node = linked_list.search(2)
+    assert linked_list.remove(node) is not None
+    assert linked_list.remove(node) == None
 
 
-def test_size_list():
-    test_list = LinkedList
-    expected = 3
-    actual = test_list.size_list
-    assert expected, actual
-
-
-def test_search_node():
-    test_list = LinkedList
-    found_node = test_list.search_node(3)
-    expected = (3)
-    actual = (found_node)
-    assert expected, actual
-
-
-def test_remove_node():
-    test_list = LinkedList
-    test_list = test_list.remove_node(1)
-    expected = (1)
-    actual = (test_list)
-    assert expected, actual
-
-
-def test_print_list():
-    test_list = LinkedList
-    test_list = test_list.print_list()
-    expected = (1, 2, 3)
-    actual = (test_list)
-    assert expected, actual
+def test_display():
+    linked_list = LL.LinkedList()
+    linked_list.insert(1)
+    linked_list.insert(2)
+    linked_list.insert(3)
+    assert linked_list.display == "1, 2, 3"
