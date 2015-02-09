@@ -61,3 +61,18 @@ class LinkedList():
             tuple_literal_list = tuple_literal_list + (all_node.data,)
             all_node = all_node.next
         print tuple_literal_list
+
+
+a = LinkedList()
+a.insert_node(3)
+a.insert_node(5)
+a.insert_node(6)
+a.insert_node(28)
+a.print_list()
+
+a.pop_first_node()
+a.print_list()
+a.size_list()
+a.print_list()
+a.remove_node(6)
+a.search_node(5)
