@@ -42,3 +42,13 @@ class LinkedList():
                 return traverse
             else:
                 traverse = traverse.next
+
+    def remove_node(self, data):
+        takeout = self.head
+        found = False
+        while takeout is not None and not found:
+            if takeout.data == data:
+                takeout == takeout.next.next
+                found = True
+                print takeout.data
+                return data
