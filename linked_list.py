@@ -16,10 +16,9 @@ class LinkedList(object):
 
     def pop(self):
         """Return node data, remove node from head of list."""
-        if self.head:
-            value = self.head.data
-            self.head = self.head.next
-            return value
+        value = self.head.data
+        self.head = self.head.next
+        return value
 
     def size(self):
         """Return length of linked list."""
@@ -28,38 +27,28 @@ class LinkedList(object):
         while current_size is not None:
             list_size = list_size + 1
             current_size = current_size.next
-        print list_size
         return list_size
 
     def search(self, data):
         find_node = self.head
-        found = False
-        while find_node is not None and not found:
+        while find_node is not None:
             if find_node.data == data:
-                found = True
-                print find_node.data
                 return find_node
             else:
                 find_node = find_node.next
 
     def remove(self, node):
         """Remove node from list"""
-        if self.head:
-            prev_node = None
-            cur_node = self.head
-        else:
-            return None
+        prev_node = None
+        cur_node = self.head
         while cur_node.next is not None:
             if cur_node == node:
                 if prev_node is None:
                     self.head = node.next
                     return cur_node
-                elif cur_node.next is None:
-                    prev_node.next = None
-                    return cur_node
                 else:
                     prev_node.next = cur_node.next
-                    return cur_node
+                return cur_node
             else:
                 cur_node = cur_node.next
         return None
