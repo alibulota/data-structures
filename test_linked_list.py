@@ -2,7 +2,6 @@ import linked_list as LL
 import pytest
 # import unittest
 
-
 def test_init_Node():
     data = "test"
     head = LL.Node(data)
@@ -62,7 +61,7 @@ def test_remove():
 
 def test_display():
     linked_list = LL.LinkedList()
-    linked_list.insert(1)
-    linked_list.insert(2)
     linked_list.insert(3)
-    assert linked_list.display == "1, 2, 3"
+    linked_list.insert(2)
+    linked_list.insert(1)
+    assert linked_list.display() == "(1, 2, 3)"
