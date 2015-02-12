@@ -41,7 +41,7 @@ class LinkedList(object):
         """Remove node from list"""
         prev_node = None
         cur_node = self.head
-        while cur_node.next is not None:
+        while cur_node is not None:
             if cur_node == node:
                 if prev_node is None:
                     self.head = node.next
