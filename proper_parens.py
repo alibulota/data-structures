@@ -1,11 +1,13 @@
-def proper_parens(text):
-    open_paren = text.count('(')
-    closed_parens = text.count(')')
-    if open_paren == closed_parens:
+def prop_parens(str):
+    count = 0
+    for paren in str:
+        if paren == '(':
+            count += 1
+        if paren == ')':
+            count -= 1
+        if count < 0:
+            return -1
+    if count == 0:
         return 0
-
-    if closed_parens > open_paren:
-        return -1
-
-    if closed_parens < open_paren:
+    else:
         return 1
