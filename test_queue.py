@@ -24,20 +24,23 @@ def test_dequeue():
         if q.list.head:
             assert q.dequeue() == 'z'
         else:
-            with pytest.raises(LookupError):
+            with pytest.raises(LookupError) as context:
                 q.dequeue()
+                assert 'Empty Queue' in str(context.value)
+
 
 def test_dequeue_empty():
     q = Queue()
-    e_list = ('')
+    e_list = []
     for data in e_list:
         q.enqueue(data)
-    for data in tist:
+    for data in e_list:
         if q.list.head:
             assert q.dequeue() == 'z'
         else:
-            with pytest.raises(LookupError):
+            with pytest.raises(LookupError) as context:
                 q.dequeue()
+                assert 'Empty Queue' in str(context.value)
 
 def test_size():
     q = Queue()
