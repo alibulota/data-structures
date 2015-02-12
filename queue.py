@@ -12,9 +12,9 @@ class Queue(object):
             node = self.list.head
             while node.next:
                 node = node.next
-            prev_node = node
-            data = prev_node.data
-            self.list.remove(prev_node)
+            last_node = node
+            data = last_node.data
+            self.list.remove(last_node)
         else:
             raise LookupError('Empty Queue')
         return data
