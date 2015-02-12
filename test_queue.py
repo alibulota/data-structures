@@ -27,6 +27,17 @@ def test_dequeue():
             with pytest.raises(LookupError):
                 q.dequeue()
 
+def test_dequeue_empty():
+    q = Queue()
+    e_list = ('')
+    for data in e_list:
+        q.enqueue(data)
+    for data in tist:
+        if q.list.head:
+            assert q.dequeue() == 'z'
+        else:
+            with pytest.raises(LookupError):
+                q.dequeue()
 
 def test_size():
     q = Queue()
