@@ -55,7 +55,7 @@ class LinkedList(object):
 
     def display(self):
         """Print list in tuple literal format"""
-        # http://dbader.org/blog/functional-linked-lists-in-python
+        # source: http://dbader.org/blog/functional-linked-lists-in-python 
         def internal_display(node):
             if node is None:
                 return ""
