@@ -2,7 +2,7 @@ from doubly_linked_list import DoublyList, Node
 import pytest
 
 
-tist = ('a', 100, False, None, 'Butters')
+tist = ['a', 100, False, None, 'Butters']
 
 
 def test_init_Node():
@@ -57,8 +57,8 @@ def test_shift():
 def test_remove():
     doubly_linked_list = DoublyList()
     for data in tist:
-        assert doubly_linked_list.remove(100) == 100
-        # else:
-        #     with pytest.raises(LookupError)as context:
-        #         remove()
-        #         assert "Data not in list" in str(context.value)
+        doubly_linked_list.remove(data)
+        assert tist.doubly_linked_list.remove() == 100
+            with pytest.raises(LookupError)as context:
+                doubly_linked_list.remove()
+                assert "Data not in list" in str(context.value)

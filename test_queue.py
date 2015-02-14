@@ -9,6 +9,7 @@ def test_init_queue():
     q = Queue()
     assert isinstance(q, Queue)
 
+
 def test_enqueue():
     q = Queue()
     for data in tist:
@@ -42,12 +43,16 @@ def test_dequeue_empty():
                 q.dequeue()
                 assert 'Empty Queue' in str(context.value)
 
+
 def test_size():
     q = Queue()
-    return q.list.size() == 4
-
+    for data in range(4):
+        q.enqueue(data)
+    assert q.size() == 4
 
 
 def test_display():
     q = Queue()
-    return q.list.display() == tist
+    for data in range(4):
+        q.enqueue(data)
+    assert q.display() == '(4, 3, 2, 1)'

@@ -55,16 +55,19 @@ class DoublyList(object):
         curr_node = self.head
         while curr_node is not None:
             if curr_node.data == data:
-                if curr_node == node:
-                    if prev_node is None:
-                        self.head = node.next
-                    return curr_node
+                #want to remove 
+                prev_node = curr_node.prev
+                next_node = curr_node.next
+                #first element in list
+                if self.head == curr_node:
+                    self.head = curr_node.next
+                elif self.tail == curr_node:
+                    self.tail = curr_node.prev
                 else:
-                    prev_node.next = curr_node.next
-                return curr_node
-            else:
-                curr_node = curr_node.next
-            raise LookupError("Data not in list.")
+                    prev_node.next = next_node
+                    next_node.prev = prev_node
+                    curr_node = curr_node.next
+        return LookupError("Data not in list.")
 
 
 
