@@ -24,7 +24,7 @@ def test_insert():
     for data in tist:
         doubly_linked_list.insert(data)
         assert doubly_linked_list.head.data == data
-    assert doubly_linked_list.head.data == tist [-1]
+    assert doubly_linked_list.head.data == tist[-1]
 
 
 def test_append():
@@ -32,7 +32,7 @@ def test_append():
     for data in tist:
         doubly_linked_list.append(data)
         assert doubly_linked_list.tail.data == data
-    assert doubly_linked_list.tail.data == tist [-1]
+    assert doubly_linked_list.tail.data == tist[-1]
 
 
 def test_pop():
@@ -42,7 +42,6 @@ def test_pop():
     for data in tist:
         assert doubly_linked_list.pop() == data
     assert doubly_linked_list.pop() is None
-
 
 
 def test_shift():
@@ -57,8 +56,13 @@ def test_shift():
 def test_remove():
     doubly_linked_list = DoublyList()
     for data in tist:
-        doubly_linked_list.remove(data)
-        assert tist.doubly_linked_list.remove() == 100
-            with pytest.raises(LookupError)as context:
-                doubly_linked_list.remove()
-                assert "Data not in list" in str(context.value)
+        doubly_linked_list.insert(data)
+    while tist:
+        doubly_linked_list.remove(100)
+        tist.remove(data)
+    assert doubly_linked_list.pop() is None
+    assert doubly_linked_list.head is None
+    assert doubly_linked_list.tail is None
+    doubly_linked_list.insert(101)
+    with pytest.raises(LookupError):
+            doubly_linked_list.remove()
