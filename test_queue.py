@@ -55,4 +55,4 @@ def test_display():
     q = Queue()
     for data in range(4):
         q.enqueue(data)
-    assert q.display() == '(4, 3, 2, 1)'
+    assert q.display() == '(3, 2, 1, 0)'
