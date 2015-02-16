@@ -12,3 +12,5 @@ class Stack(object):
     def pop(self):
         value = self.linked_list.pop()
         return value
+
+
