@@ -22,7 +22,7 @@ class prop_parens_test(unittest.TestCase):
 
 
     def test_empty_string(self):
-        self.assertTrue(prop_parens(' ') == 0)
+        self.assertTrue(prop_parens('') == 0)
 
 
     def test_parens1(self):
