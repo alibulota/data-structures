@@ -8,7 +8,7 @@ class binHeap(object):
 
     def push(self, value):
         self.heap.append(value)
-        self.curr_size = self.curr_size += 1
+        self.curr_size += 1
         self.up(self.curr_size)
 
     def up(self, value):
@@ -22,7 +22,7 @@ class binHeap(object):
     def pop(self):
         r_value = self.heap[1]
         self.heap[1] = self.heap[self.curr_size]
-        self.curr_size = self.curr_size -1
+        self.curr_size = self.curr_size - 1
         self.heap.pop()
         self.down(1)
         return r_value
@@ -37,7 +37,7 @@ class binHeap(object):
             value = mini_child
 
     def mini_child(self, value):
-        if value * 2 +1 > self.curr_size:
+        if value * 2 + 1 > self.curr_size:
             return value * 2
         else:
             if self.heap[value*2] < self.heap[value*2+1]:
