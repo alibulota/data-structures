@@ -15,7 +15,7 @@ def test_pop(self):
     assert pq.pop() == "puppies"
     assert pq.pop() == "hello"
     assert pq.pop() == "butts"
-    assert curr_size == 0
+
 
 def test_peek(self):
     pq = pQueue()
