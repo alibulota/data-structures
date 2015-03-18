@@ -1,7 +1,5 @@
-'''Referenced from http://blog.garillot.net/post/9048852162/how-do-you-make-a-recursive-merge-sort-more'''
-
-
 def merge_sort(a_list):
+    '''Referenced from http://blog.garillot.net/post/9048852162/how-do-you-make-a-recursive-merge-sort-more'''
     if len(a_list) > 1:
         mid = len(a_list) / 2
         left_list = a_list[0:mid]
@@ -24,7 +22,8 @@ def merge_sort(a_list):
                 a_list[i] = value_r
                 r_side += 1
             else:
-                raise Exception("Can not merge")
+                return None
+                # raise Exception("Can not merge")
 
 if __name__ == '__main__':
     import timeit
