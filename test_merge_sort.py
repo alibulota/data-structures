@@ -15,7 +15,7 @@ def test_unsorted():
     assert unsorted_list == [-32, 2, 3, 3, 5, 76, 100, 444]
 
 
-def test_empty(self):
+def test_empty():
     empty = []
     merge.merge_sort(empty)
-    self.assertRaises(Exception, merge, a_list)
+    assert empty == []
