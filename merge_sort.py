@@ -1,4 +1,4 @@
-'''Referenced http://blog.garillot.net/post/9048852162/how-do-you-make-a-recursive-merge-sort-more'''
+'''Referenced from http://blog.garillot.net/post/9048852162/how-do-you-make-a-recursive-merge-sort-more'''
 
 
 def merge_sort(a_list):
