@@ -14,16 +14,19 @@ def test_radix_int():
 
 
 def test_radix_int_2():
-    list_1 = [4355, 63255, 76532, 9, 00245, 000]
-    expected = list(list_1)
-    expected.radix_int()
+    list_1 = [4355, 63255, 76532, 9, 000]
+    list_2 = [000, 9, 4355, 63255, 76532]
+    expected = [000, 9, 4355, 63255, 76532]
     assert radix_int(list_1) == expected
+    assert radix_int(list_2) == expected
 
 
 def test_radix_string():
     list_1 = ['a', 'aa', 'aab', 'b', 'bbc', 'x', 'y', 'z']
+    list_2 = ['z', 'y', 'x', 'bbc', 'b', 'aab', 'aa', 'a']
     expected = ['a', 'aa', 'aab', 'b', 'bbc', 'x', 'y', 'z']
     assert radix_string(list_1) == expected
+    assert radix_string(list_2) == expected
 
 
 def test_radix_string_2():
