@@ -1,4 +1,4 @@
-# from random import random
+import timeit
 
 
 def radix_int(array, base=10):
@@ -48,4 +48,22 @@ def radix_string(s_list, i):
     buckets = [radix_string(b, i + 1) for b in buckets]
     return divided_bucket + [b for blist in buckets for b in blist]
 
-    if __name__ == '__main__':
+if __name__ == '__main__':
+
+    best = [i for i in range(1000)]
+    worst = [i for i in range(1000)][::-1]  # reverse
+
+    def best_case():
+        return radix_int(best)
+
+    def worst_case():
+        return radix_int(worst)
+
+    print "Best Case: {}".format(
+        timeit.timeit('best_case()', setup='from __main__ import best_case', number=100))
+
+    print "Worst Case: {}".format(
+        timeit.timeit('worst_case()', setup='from __main__ import worst_case', number=100))
+
+    # Best Case: 0.126667976379
+    # Worst Case: 0.123579025269
