@@ -31,8 +31,21 @@ def radix_int(array, base=10):
     return array
 
 
-def radix_string(s_list):
+def radix_string(s_list, i):
     '''MSD radix sort: suitable for sorting strings
     such as workds or fixed length integer representation.
     Referenced from http://en.wikipedia.org/wiki
     Radix_sort#Example_in_Python'''
+    if len(s_list) <= 1:
+        return s_list
+    divided_bucket = []
+    buckets = [[] for x in range(27)]
+    for string in s_list:
+        if i >= len(string):
+            divided_bucket.append(string)
+        else:
+            buckets[ord(string[i]) - ord('a')].append(string)
+    buckets = [radix_string(b, i + 1) for b in buckets]
+    return divided_bucket + [b for blist in buckets for b in blist]
+
+    if __name__ == '__main__':
