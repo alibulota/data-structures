@@ -2,6 +2,7 @@ from bin_heap import binHeap
 import pytest
 import random
 
+
 def test_empty_heap():
     blist = binHeap()
     assert blist.heap == [0]
